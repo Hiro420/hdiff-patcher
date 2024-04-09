@@ -21,6 +21,11 @@ namespace Hdiff_Patcher
 
             // Check if all files are present
             bool fileMissing = false;
+            if (!File.Exists(Path.Combine(workingDirForAdmin, "hdifffiles.txt")))
+            {
+                var fs = File.Create("hdifffiles.txt");
+                fs.Close();
+            }
             foreach (string line1 in File.ReadLines(Path.Combine(workingDirForAdmin, "hdifffiles.txt")))
             {
                 string line = JsonConvert.DeserializeObject<hdifffilesRow>(line1).remoteName;
