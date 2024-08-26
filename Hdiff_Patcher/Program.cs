@@ -115,12 +115,6 @@ namespace Hdiff_Patcher
                 File.Delete(filePath);
             }
 
-
-            /*
-            // Delete source file for deletefiles.txt and the file itself
-            File.Delete(Path.Combine(workingDirForAdmin, "deletefiles.txt"));
-            File.Delete(Path.Combine(workingDirForAdmin, "deletefiles.txt"));
-
             // Delete obsolete .hdiff files after patch application
             foreach (string line1 in File.ReadLines(Path.Combine(workingDirForAdmin, "hdifffiles.txt")))
             {
@@ -128,10 +122,16 @@ namespace Hdiff_Patcher
                 File.Delete(Path.Combine(workingDirForAdmin, line + ".hdiff"));
             }
 
+            // Delete source file for deletefiles.txt and the file itself
+            File.Delete(Path.Combine(workingDirForAdmin, "deletefiles.txt"));
+            File.Delete(Path.Combine(workingDirForAdmin, "deletefiles.txt"));
+
             // Delete source file for hdifffiles.txt and the file itself
             File.Delete(Path.Combine(workingDirForAdmin, "hdifffiles.txt"));
             File.Delete(Path.Combine(workingDirForAdmin, "hdifffiles.txt"));
 
+
+            /*
             // Delete patch application
             File.Delete(Path.Combine(workingDirForAdmin, "lib", "hpatchz.exe"));
 
