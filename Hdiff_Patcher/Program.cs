@@ -124,10 +124,8 @@ namespace Hdiff_Patcher
 
             // Delete source file for deletefiles.txt and the file itself
             File.Delete(Path.Combine(workingDirForAdmin, "deletefiles.txt"));
-            File.Delete(Path.Combine(workingDirForAdmin, "deletefiles.txt"));
 
             // Delete source file for hdifffiles.txt and the file itself
-            File.Delete(Path.Combine(workingDirForAdmin, "hdifffiles.txt"));
             File.Delete(Path.Combine(workingDirForAdmin, "hdifffiles.txt"));
 
 
