@@ -26,6 +26,11 @@ namespace Hdiff_Patcher
                 var fs = File.Create("hdifffiles.txt");
                 fs.Close();
             }
+            if (!File.Exists(Path.Combine(workingDirForAdmin, "deletefiles.txt")))
+            {
+                var fs = File.Create("deletefiles.txt");
+                fs.Close();
+            }
             foreach (string line1 in File.ReadLines(Path.Combine(workingDirForAdmin, "hdifffiles.txt")))
             {
                 string line = JsonConvert.DeserializeObject<hdifffilesRow>(line1).remoteName;
@@ -110,6 +115,8 @@ namespace Hdiff_Patcher
                 File.Delete(filePath);
             }
 
+
+            /*
             // Delete source file for deletefiles.txt and the file itself
             File.Delete(Path.Combine(workingDirForAdmin, "deletefiles.txt"));
             File.Delete(Path.Combine(workingDirForAdmin, "deletefiles.txt"));
@@ -134,6 +141,7 @@ namespace Hdiff_Patcher
             {
                 File.Delete(hdiffzPath);
             }
+            */
 
             Console.WriteLine("Deleted all obsolete files after patch. Patch application is finished now. Enjoy the game.\n");
 
